@@ -110,11 +110,12 @@ public class ForecastFragment extends Fragment {
         listView.setAdapter(mForecastAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
                 Context context = getActivity();
-                CharSequence text = "Hello toast!";
                 int duration = Toast.LENGTH_SHORT;
+                String text = mForecastAdapter.getItem(position);
+
 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
