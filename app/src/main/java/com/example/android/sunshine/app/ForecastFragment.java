@@ -117,8 +117,9 @@ public class ForecastFragment extends Fragment {
                 int duration = Toast.LENGTH_SHORT;
                 String text = mForecastAdapter.getItem(position);
 
-                Intent i = new Intent(context, DetailActivity.class);
-                startActivity(i);
+                Intent intent = new Intent(context, DetailActivity.class)
+                        .putExtra(Intent.EXTRA_TEXT, text);
+                startActivity(intent);
 
 
                 Toast toast = Toast.makeText(context, text, duration);
