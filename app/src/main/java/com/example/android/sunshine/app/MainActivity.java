@@ -1,12 +1,11 @@
 package com.example.android.sunshine.app;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
 
 public class MainActivity extends ActionBarActivity {
 
@@ -36,14 +35,11 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if(id == R.id.action_settings){
-            Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
-            Log.v("VIVZ", "settings button is clicked, should change activities if correctly");
+        if (id == R.id.action_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
-
 }
